@@ -1,0 +1,278 @@
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  display: grid;
+  grid-template-columns: 20px 1fr 5fr 1fr 20px;
+  grid-row-gap: 15px;
+  font-family: 'Calibri', sans-serif; 
+  margin: 0;
+  padding: 0;
+  font-size: 16pt; 
+}
+
+
+h1{
+  font-size: 2em;
+  line-height: 1.5;
+  color: #4586f4;
+}
+
+h2{
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+h3{
+  font-size: 0.9em;
+  line-height: 1.5;
+  font-weight: lighter;
+}
+h4{
+  font-size: .5em;
+  line-height: 1.5;
+}
+p {
+  font-size: 1em;
+  padding-bottom:10px;
+  color: #485063;
+}
+
+#title{
+  padding-top: 30px;
+}
+
+a.skip{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: -40px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+a.skip:focus{
+  top:20px;
+  color: black;
+  text-decoration-style: solid;
+}
+.current {
+  font-weight: bold;
+  /* newcolor */
+  color: #7A3C1F;
+}
+
+#logo{
+  max-width: 50px;
+}
+
+#hi{
+  max-width: 30px;
+}
+
+#backarr{
+  max-width: 15px;
+}
+#me{
+  max-width: 250px;
+}
+.introduction{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.back{
+  text-decoration: none;
+  color:black;
+  font-weight: bold;
+}
+
+a:hover, a:focus{
+  color: #4586f4;
+  text-decoration: underline;
+}
+
+header{
+  padding-top: 20px;
+  grid-column: 1 / -1;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_links{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_item{
+  padding: 6px;
+}
+.nav_item a{
+  color: black;
+  text-decoration: none;
+
+}
+
+.nav_item a:hover, a:focus{
+  color: #4586f4;
+  text-decoration: underline;
+}
+main{
+  grid-column: 2 / span 3;
+  padding-top: 30px;
+}
+footer{
+  margin-top: 20px;
+  grid-column: 2 / span 3;
+  color: black;
+  padding: 30px;
+  text-align: center;
+  border-top: 3px solid black;
+}
+footer img{
+  max-width: 50px;
+  padding: 10px;
+}
+
+
+/* Cards! */
+
+
+.works > a{
+  text-decoration: none;
+}
+.card{
+  margin: 20px auto;
+  background: white;
+  border: 6px solid #2060ce;
+  border-radius: 20px;
+  padding: 0 0 50px 0;
+  /*Your code here.*/
+  /*Take a look at flex-basis*/
+  flex-basis: 600px;
+}
+
+.card > header{
+  flex-direction: column;
+  background: #2060ce;
+  padding: 20px 0;
+  border-radius: 7px 7px 0 0;
+}
+
+.card h2{
+  color: white;
+}
+.card p{
+  color: white;
+  padding: 20px;
+}
+
+.card img{
+  margin: 50px auto 0px;
+  display: block;
+}
+
+#projimg1{
+  max-width: 150px;
+}
+#projimg2{
+  max-width: 150px;
+}
+#projimg3{
+  max-width: 350px;
+}
+
+/* Gallery! */
+#gallery{
+  margin-top: 60px;
+}
+.gallery{
+  min-height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.gallery > img{
+  margin: 10px;
+  width: 200px;
+  height: 260px;
+  object-fit: cover;
+}
+
+
+
+
+@media all and (min-width: 800px){
+  body{
+    grid-template-columns: auto 400px 400px auto;
+
+  }
+  header{
+    grid-column: 2 / span 2;
+    display: flex;
+    flex-direction: row;
+  }
+
+  main{
+    padding-top: 60px;
+  }
+  .introduction{
+    display: flex;
+    flex-direction: row;
+  }
+  #me{
+    margin-top: 20px;
+  }
+
+  #aboutintro{
+    margin-left: 30px;
+  }
+  .nav_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav_item{
+    padding: 20px;
+  }
+  main{
+    grid-column: 2 / span 2;
+  }
+
+  footer{
+    grid-column: 2 / span 2;
+    margin-top: 20px;
+  }
+
+
+}
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+  header{
+    flex-direction: row;
+  }
+  .skip a{
+    -webkit-transition: none; /* sets to default setting */
+    transition: none;        /* sets to default setting */
+   }
+
+  /*Turn off parallax*/
+  header{
+    background-attachment: initial;
+  }
+}
