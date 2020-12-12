@@ -162,8 +162,6 @@ footer img{
   border: 8px solid #396dc8;
   border-radius: 20px;
   padding: 0 0 50px 0;
-  /*Your code here.*/
-  /*Take a look at flex-basis*/
   flex-basis: 600px;
   overflow: hidden;
 }
