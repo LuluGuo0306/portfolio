@@ -22,12 +22,15 @@ h1{
 h2{
   font-size: 1.25em;
   line-height: 1.5;
+  margin-top:15px;
+  margin-bottom:5px;
 }
 
 h3{
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.5;
   font-weight: lighter;
+  margin-top:5px;
 }
 h4{
   font-size: .5em;
@@ -37,9 +40,10 @@ p {
   font-size: 1em;
   padding-bottom:10px;
   color: #485063;
+  line-height: 1.25;
 }
 
-#title{
+.title{
   padding-top: 30px;
 }
 
@@ -49,8 +53,8 @@ a.skip{
   padding: 6px;
   position: absolute;
   top: -40px;
-  -webkit-transition: top 1s ease-out;
-  transition: top 1s ease-out;
+  -webkit-transition: top 0.5s ease-out;
+  transition: top 0.5s ease-out;
   z-index: 1;
 }
 
@@ -77,7 +81,8 @@ a.skip:focus{
   max-width: 15px;
 }
 #me{
-  max-width: 250px;
+  max-width: 200px;
+  margin: 20px 0;
 }
 .introduction{
   display: flex;
@@ -152,19 +157,20 @@ footer img{
   text-decoration: none;
 }
 .card{
-  margin: 20px auto;
+  margin: 50px auto;
   background: white;
-  border: 6px solid #2060ce;
+  border: 8px solid #396dc8;
   border-radius: 20px;
   padding: 0 0 50px 0;
   /*Your code here.*/
   /*Take a look at flex-basis*/
   flex-basis: 600px;
+  overflow: hidden;
 }
 
 .card > header{
   flex-direction: column;
-  background: #2060ce;
+  background: #396dc8;
   padding: 20px 0;
   border-radius: 7px 7px 0 0;
 }
@@ -180,8 +186,12 @@ footer img{
 .card img{
   margin: 50px auto 0px;
   display: block;
+  transition: transform .5s ease;
 }
 
+.card:hover img {
+  transform: scale(1.25);
+}
 #projimg1{
   max-width: 150px;
 }
@@ -191,8 +201,11 @@ footer img{
 #projimg3{
   max-width: 350px;
 }
-
+#projimg4{
+  max-width: 350px;
+}
 /* Gallery! */
+
 #gallery{
   margin-top: 60px;
 }
@@ -201,20 +214,104 @@ footer img{
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: left;
 }
-
-.gallery > img{
-  margin: 10px;
-  width: 200px;
-  height: 260px;
+.gallery h2{
+  font-style: italic;
+}
+.gallery img{
+  margin: 6px;
+  width: 130px;
+  height: 170px;
   object-fit: cover;
+  transition: transform .25s, filter 0.25s ease-in-out;
+  filter: grayscale(60%);
+}
+.gallery img:hover{
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+.gallery img:first-of-type {
+  border: 6px #0077b6 solid;
+}
+.gallery img:nth-of-type(2) {
+  border: 6px #0096c7 solid;
+}
+.gallery img:nth-of-type(3){
+  border: 6px #00b4d8 solid;
+}
+.gallery img:nth-of-type(4) {
+  border: 6px #48cae4 solid;
+}
+.gallery img:nth-of-type(5){
+  border: 6px #90e0ef solid;
+}
+#projectitle{
+  text-align: center;
+}
+.project_sub{
+  font-weight: bold;
+}
+ul{
+  list-style: none;
+  font-size: 1em;
+  padding-bottom:10px;
+  color: #485063;
+  line-height: 1.25;
+}
+.overview{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.product_title{
+  color: #4586f4;
+}
+.contact_form{
+  text-align: center;
+}
+input{
+  border-color: #4586f4;
+  height: 25px;
+  width: 400px;
+}
+textarea{
+  border-color: #4586f4;
+  height: 200px;
+  width: 400px;
+}
+.click-button{
+  border-radius: 5px 5px 5px 5px;
+  font-size: 16px;
+  color: white;
+  border-color:#396dc8;
+  background-color: #396dc8;
+  height: 36px;
+  width: 300px;
+}
+
+@media screen and (min-width: 650px){
+  .nav_links{
+    flex-direction: row;
+  }
+  .introduction{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+  #me{
+    max-width: 250px;
+    margin:0;
+  }
+  #aboutintro{
+    margin-left: 30px;
+  }
 }
 
 
-
-
-@media all and (min-width: 800px){
+@media screen and (min-width: 900px){
   body{
     grid-template-columns: auto 400px 400px auto;
 
@@ -233,7 +330,7 @@ footer img{
     flex-direction: row;
   }
   #me{
-    margin-top: 20px;
+    max-width: 200px;
   }
 
   #aboutintro{
@@ -256,23 +353,27 @@ footer img{
     grid-column: 2 / span 2;
     margin-top: 20px;
   }
-
-
 }
 @media screen and (prefers-reduced-motion: reduce){
   html{
       scroll-behavior: auto; /* Removes scroll animation */
   }
-  header{
-    flex-direction: row;
-  }
+
   .skip a{
     -webkit-transition: none; /* sets to default setting */
     transition: none;        /* sets to default setting */
    }
+  .card img{
+    transition: none; 
+  }
+  .card:hover img {
+    transform: none;
+  }
+  .gallery img{
+    transition: none; 
+  }
 
-  /*Turn off parallax*/
-  header{
-    background-attachment: initial;
+  .gallery img:hover{
+    transform: none;
   }
 }
